@@ -13,7 +13,7 @@ public class ControlDoSomething implements Initializable {
     String params = "";
 
 
-/*                  ETIQUETES TIPUS
+/*                  ETIQUETES DE TIPUS D'ACTIVITAT
 
     ["education", "recreational", "social", "diy", "charity", "cooking", "relaxation", "music", "busywork"]
 */
