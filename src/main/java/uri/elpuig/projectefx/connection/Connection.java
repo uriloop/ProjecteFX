@@ -1,26 +1,24 @@
 package uri.elpuig.projectefx.connection;
 
 
-import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import uri.elpuig.projectefx.PublicIP;
+import uri.elpuig.projectefx.model.DoSomething;
+import uri.elpuig.projectefx.model.PublicIP;
 
 
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.MalformedInputException;
 
 public class Connection {
-    private String url_source = connectionConfig.URL_OWM;
+    private String url_source;
 
     public PublicIP getPublicIp(String params) {
         PublicIP ip = null;
         URL url = null;
         StringBuilder sb = new StringBuilder(url_source).append(params);
-
+        url_source = connectionConfig.URL_IP;
         try {
             url = new URL(sb.toString());
             ip = new ObjectMapper().readValue(url, PublicIP.class);
@@ -33,22 +31,25 @@ public class Connection {
 
     }
 
-   /* public Forecast getForecast(String params) {
-        Forecast forecast = null;
+    public DoSomething getRandomActivityToDo(String params) {
+
+        DoSomething activity = null;
         URL url = null;
-        StringBuilder sb = new StringBuilder(configData.URL_OWM).append(params).append("&appid=").append(configData.API_KEY);
+        String url_source2 = connectionConfig.URL_DO_RANDOM;
+        StringBuilder sb = new StringBuilder(url_source2).append(params);
 
         try {
             url = new URL(sb.toString());
-            forecast = new ObjectMapper().readValue(url, Forecast.class);
-        } catch (MalformedURLException | JsonMappingException | JsonParseException e) {
+            activity = new ObjectMapper().readValue(url, DoSomething.class);
+        } catch (JsonProcessingException | MalformedInputException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return forecast;
+        return activity;
 
 
     }
-*/
+
+
 }

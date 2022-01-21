@@ -1,4 +1,4 @@
-package uri.elpuig.projectefx;
+package uri.elpuig.projectefx.model;
 
 public class PublicIP {
 

@@ -1,9 +1,7 @@
 package uri.elpuig.projectefx.control;
 
-import com.fasterxml.jackson.databind.jsontype.impl.MinimalClassNameIdResolver;
 import javafx.fxml.Initializable;
-import javafx.fxml.FXML;
-import uri.elpuig.projectefx.PublicIP;
+import uri.elpuig.projectefx.model.PublicIP;
 import uri.elpuig.projectefx.connection.Connection;
 
 import java.net.URL;
