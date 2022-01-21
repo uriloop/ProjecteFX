@@ -17,8 +17,8 @@ public class Connection {
     public PublicIP getPublicIp(String params) {
         PublicIP ip = null;
         URL url = null;
-        StringBuilder sb = new StringBuilder(url_source).append(params);
         url_source = connectionConfig.URL_IP;
+        StringBuilder sb = new StringBuilder(url_source).append(params);
         try {
             url = new URL(sb.toString());
             ip = new ObjectMapper().readValue(url, PublicIP.class);
