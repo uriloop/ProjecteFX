@@ -35,6 +35,10 @@ public double price,accessibility;
         this.accessibility =accessibility.doubleValue();
     }
 
+    public String getActivity(){
+        return activity;
+    }
+
     @Override
     public String toString() {
         return "DoSomething{\n" +
