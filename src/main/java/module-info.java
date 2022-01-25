@@ -12,4 +12,6 @@ module uri.elpuig.projectefx {
     exports uri.elpuig.projectefx;
     exports uri.elpuig.projectefx.model;
     opens uri.elpuig.projectefx.model to javafx.fxml;
+    exports uri.elpuig.projectefx.control to javafx.fxml;
+    opens uri.elpuig.projectefx.control to javafx.fxml;
 }

@@ -14,6 +14,7 @@ import java.nio.charset.MalformedInputException;
 public class Connection {
     private String url_source;
 
+
     public PublicIP getPublicIp(String params) {
         PublicIP ip = null;
         URL url = null;
@@ -31,11 +32,30 @@ public class Connection {
 
     }
 
-    public DoSomething getRandomActivityToDo(String params) {
-
+   /* public static void main(String[] args) {
+        String url_source2;
         DoSomething activity = null;
         URL url = null;
-        String url_source2 = connectionConfig.URL_DO_RANDOM;
+        url_source2 = connectionConfig.URL_DO_RANDOM;
+        StringBuilder sb = new StringBuilder(url_source2).append("/");
+
+        try {
+            url = new URL(sb.toString());
+            activity = new ObjectMapper().readValue(url, DoSomething.class);
+        } catch (JsonProcessingException | MalformedInputException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println(activity.getActivity());
+
+    }*/
+
+    public  DoSomething getRandomActivityToDo(String params) {
+        String url_source2;
+        DoSomething activity = null;
+        URL url = null;
+        url_source2 = connectionConfig.URL_DO_RANDOM;
         StringBuilder sb = new StringBuilder(url_source2).append(params);
 
         try {

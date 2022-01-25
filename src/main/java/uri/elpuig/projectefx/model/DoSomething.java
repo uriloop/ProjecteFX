@@ -23,7 +23,8 @@ public double price,accessibility;
     }
 
     public void setLink(String link) {
-        this.link = link;
+        if (link==null) this.link="";
+        else this.link = link;
     }
 
     public void setKey(Number key) {
