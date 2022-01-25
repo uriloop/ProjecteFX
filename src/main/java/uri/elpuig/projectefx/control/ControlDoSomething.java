@@ -44,17 +44,17 @@ public class ControlDoSomething implements Initializable {
     Button reiniciar;
     @FXML
     Button buscar;
-@FXML TextField participants;
-
+    @FXML
+    TextField participants;
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        ObservableList<String> hola = FXCollections.observableArrayList(
+                "", "Education", "Recreational", "Social", "DIY", "Charity", "Cooking", "Relaxation", "Music", "Busywork");
 
 
-        tipus.setItems(FXCollections.observableArrayList(
-                 "Education", "Recreational","Social","DIY","Charity","Cooking","Relaxation","Music","Busywork")
-        );
+        tipus.setItems(hola);
         tipus.setTooltip(new Tooltip("Select type"));
 
 
@@ -65,57 +65,58 @@ public class ControlDoSomething implements Initializable {
     }
 
     @FXML
-    private void reiniciar(){
+    private void reiniciar() {
         dificultat.setValue(0);
         tipus.getSelectionModel();
         gratis.setSelected(false);
         participants.setText("");
 
+
     }
 
 
-
-
     @FXML
-    private void buscar(){
-        StringBuilder sb= new StringBuilder();
+    private void buscar() {
+        StringBuilder sb = new StringBuilder();
         if (gratis.isSelected()) sb.append("?price=0.0&");
-        if(!participants.getText().equals("")) sb.append("?participants="+participants.getText()+"&");
-        sb.append("?minaccessibility=0&maxaccessibility="+dificultat.getValue()+"&");
-        switch (tipus.getValue().toString()){
-            case "Education":
-                sb.append("?type=education&");
-                break;
-            case "Recreational":
-                sb.append("?type=recreational&");
-                break;
-            case "Social":
-                sb.append("?type=social&");
-                break;
-            case "DIY":
-                sb.append("?type=diy&");
-                break;
-            case "Charity":
-                sb.append("?type=charity&");
-                break;
-            case "Cooking":
-                sb.append("?type=cooking&");
-                break;
-            case "Relaxation":
-                sb.append("?type=relaxation&");
-                break;
-            case "Music":
-                sb.append("?type=music&");
-                break;
-            case "Busywork":
-                sb.append("?type=busywork&");
-                break;
-            default:
-                break;
+        if (!participants.getText().equals("")) sb.append("?participants=" + participants.getText() + "&");
+        sb.append("?minaccessibility=0&maxaccessibility=" + dificultat.getValue() + "&");
+        if (tipus.isShowing()) {
+            switch (tipus.getValue().toString()) {
+                case "Education":
+                    sb.append("?type=education&");
+                    break;
+                case "Recreational":
+                    sb.append("?type=recreational&");
+                    break;
+                case "Social":
+                    sb.append("?type=social&");
+                    break;
+                case "DIY":
+                    sb.append("?type=diy&");
+                    break;
+                case "Charity":
+                    sb.append("?type=charity&");
+                    break;
+                case "Cooking":
+                    sb.append("?type=cooking&");
+                    break;
+                case "Relaxation":
+                    sb.append("?type=relaxation&");
+                    break;
+                case "Music":
+                    sb.append("?type=music&");
+                    break;
+                case "Busywork":
+                    sb.append("?type=busywork&");
+                    break;
+                case "":
+                    break;
+            }
         }
-        Connection connect= new Connection();
+        Connection connect = new Connection();
 
-        DoSomething activity= connect.getRandomActivityToDo(sb.toString());
+        DoSomething activity = connect.getRandomActivityToDo(sb.toString());
 
         activitat.setText(activity.getActivity());
 
