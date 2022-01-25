@@ -119,6 +119,7 @@ public class ControlDoSomething implements Initializable {
         DoSomething activity = connect.getRandomActivityToDo(sb.toString());
 
         activitat.setText(activity.getActivity());
+        ///////////////////////
 
     }
 
