@@ -1,10 +1,13 @@
 package uri.elpuig.projectefx.model;
 
+import javafx.scene.control.MenuItem;
+
 public class DoSomething {
 
     public String activity,type,link;
 public int participants,key;
 public double price,accessibility;
+/*public MenuItem quit;*/
 
     public void setActivity(String activity) {
         this.activity = activity;
@@ -38,6 +41,26 @@ public double price,accessibility;
 
     public String getActivity(){
         return activity;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public int getParticipants() {
+        return participants;
+    }
+
+    public int getKey() {
+        return key;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public double getAccessibility() {
+        return accessibility;
     }
 
     @Override

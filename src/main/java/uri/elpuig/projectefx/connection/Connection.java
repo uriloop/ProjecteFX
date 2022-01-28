@@ -57,7 +57,6 @@ public class Connection {
         URL url = null;
         url_source2 = connectionConfig.URL_DO_RANDOM;
         StringBuilder sb = new StringBuilder(url_source2).append(params);
-
         try {
             url = new URL(sb.toString());
             activity = new ObjectMapper().readValue(url, DoSomething.class);
