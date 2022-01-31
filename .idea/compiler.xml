@@ -13,4 +13,9 @@
       <module name="ProjecteFX" target="16" />
     </bytecodeTargetLevel>
   </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ProjecteFX" options="--add-exports javafx.graphics/com.sun.javafx.menu=uri.elpuig.projectefx" />
+    </option>
+  </component>
 </project>

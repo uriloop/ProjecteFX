@@ -64,9 +64,10 @@ public class ControlDoSomething implements Initializable {
         tipus.setTooltip(new Tooltip("Select type"));
         dificultat.setMin(0);
         dificultat.setMax(1);
-
-
     }
+
+
+
 
     /*@FXML
     private void quit() {
@@ -85,11 +86,11 @@ public class ControlDoSomething implements Initializable {
 
     }
 
- /*   @FXML
+    @FXML
     private void about(){
         // tornaar a main i cambiar l'escena? obrir una nova escena desde akí?
 
-        FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("bored.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("aboutBored.fxml"));
         Scene scene = null;
         try {
             scene = new Scene(fxmlLoader.load(), 400, 400);
@@ -97,12 +98,9 @@ public class ControlDoSomething implements Initializable {
             e.printStackTrace();
         }
 
-        stage.setTitle("Bored?");
-        stage.setScene(scene);
-        stage.show();
 
 
-    }*/
+    }
 
 
 
